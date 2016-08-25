@@ -17,6 +17,9 @@ ActiveRecord::Schema.define(version: 20160818110542) do
     t.string   "title"
     t.text     "content"
     t.integer  "user_id"
+    t.boolean  "game"
+    t.boolean  "study"
+    t.boolean  "society"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

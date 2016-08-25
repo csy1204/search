@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root 'home#index'  
   get 'home/index'
+  get '/home/search' => 'home#search'
+  post 'home/search_result' => 'home#search_result'
   post 'home/write' => 'home#write'
   get 'destroy/:id' => 'home#destroy'
   get 'update/:id' => 'home#update'

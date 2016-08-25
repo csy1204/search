@@ -4,7 +4,7 @@
     
     <% if user_signed_in? %>
     <p><%= current_user.email %></p>
-    
+    <a href="/home/search">검색하기</a>
     
     <a href="/users/sign_out">
     <button type="button" class="bin ban-default navbar-btn" style="float: right">Sign Out</button>
@@ -25,6 +25,19 @@
     <div class="rows">
     
     <form action="/home/write" method="POST">
+      <div class="form-group">
+        <div class="row" style="text-align :center">
+          <div>
+            <input type="checkbox" name="errotic" value = true> 야나무숲         
+          
+            <input type="checkbox" name="study" value = true> 학업       
+          
+            <input type="checkbox" name="relationship" value = true> 인간관계
+          </div>
+      </div>
+
+
+      
         <div class="form-group">
           <label for="usr">제목:</label>
           <input name="title" type="text" class="form-control" id="usr">
@@ -53,6 +66,19 @@
             <h3 style="font-weight: bold"><%= p.title %></h3>
             <br><h3> <%= p.user.email %> </h3>
             <p><%= p.content %></p>
+            
+            <p>카테고리:
+                <% if p.game == true %>
+                  <%= "게임" %>
+                <% elsif p.study == true %>
+                    <%= "학업" %>
+                <% elsif p.society == true %>
+                    <%= "인간관계" %>
+                <% end %>
+                </p>
+            
+            
+            
         </div>
     <% end %>
     

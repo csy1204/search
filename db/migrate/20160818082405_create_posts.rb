@@ -5,6 +5,12 @@ class CreatePosts < ActiveRecord::Migration
       t.text :content
       t.integer :user_id
       
+      t.boolean :game
+      t.boolean :study
+      t.boolean :society
+            
+      
+      
       t.timestamps null: false
     end
   end
